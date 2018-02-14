@@ -1,5 +1,5 @@
 {
-  "name": "HubSpot Contact Property Query",
+  "name": "hubspot-contact-property-query",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
