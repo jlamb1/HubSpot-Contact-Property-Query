@@ -1,10 +1,11 @@
+require('dotenv').config();
 const http = require('http');
 const prompt = require('prompt');
 
 prompt.start();
 
-prompt.get(['email', 'api_key', 'value'], (err, result) => {
-  const url = `http://api.hubapi.com/contacts/v1/contact/email/${result.email}/profile?hapikey=${result.api_key}`;
+prompt.get(['email', 'value'], (err, result) => {
+  const url = `http://api.hubapi.com/contacts/v1/contact/email/${result.email}/profile?hapikey=${process.env.HAPI_KEY}`;
   http.get(url, (res) => {
     let body = '';
     res.on('data', (chunk) => {
